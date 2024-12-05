@@ -1,8 +1,32 @@
 ### Variables
 @url = http://localhost:3000/api/v1
 
+@testEventId = 6752098a0c9a8144d7339ab9
 
-### Event Routes
+// -------------------------------------------------------- //
 
-###
+
+// Event Routes
+
+### Get ALL Events
 GET {{url}}/events
+
+### Get Event by ID
+GET {{url}}/events/{{testEventId}}
+
+### Add An Event
+POST {{url}}/events
+Content-Type: application/json
+
+{
+    "name": "Lollapalooza",
+    "location": "Chicago, Illinois",
+    "date": "8-1-2025",
+    "time": "3:00 P.M."
+}
+
+
+
+// -------------------------------------------------------- //
+
+// Menu Routes
