@@ -283,56 +283,6 @@ closeBtn.addEventListener('click', function() {
 
 //--  Add a Menu to the list
 
-// Get the form element
-const addMenuForm = document.querySelector('#addMenuForm');
-
-// Function to handle form submission
-const handleAddMenuForm = async (event) => {
-  event.preventDefault(); // Prevent the default form submission behavior
-
-  // Get the form data
-  const formData = new FormData(addMenuForm);
-  const name = formData.get('name');
-  const description = formData.get('description');
-  const price = formData.get('price');
-  const image = formData.get('image');
-
-  // Create an object to send to the backend
-  const menuItem = {
-    name,
-    description,
-    price,
-    image,
-  };
-
-  // Send the data to the server
-  try {
-    const response = await fetch('/api/v1/menu', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(menuItem), // Send the menu item data as JSON
-    });
-
-    // Check if the response is OK
-    if (response.ok) {
-      const newMenu = await response.json();
-      console.log('Menu item added successfully:', newMenu);
-
-      // Optionally, you can display the newly added menu item on the page
-      displayMenuItems([newMenu]); // You may need to adjust this part depending on the response structure
-    } else {
-      const error = await response.json();
-      console.error('Error adding menu item:', error);
-    }
-  } catch (error) {
-    console.error('Error:', error);
-  }
-};
-
-// Attach event listener to the form
-addMenuForm.addEventListener('submit', handleAddMenuForm);
 
 
 /**
