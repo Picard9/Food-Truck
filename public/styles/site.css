@@ -1239,13 +1239,13 @@ section,
 /*--------------------------------------------------------------
 # Book A Table Section
 --------------------------------------------------------------*/
-.book-a-table .reservation-img {
+.book-a-table .addItems-img {
   min-height: 500px;
   background-size: cover;
   background-position: center;
 }
 
-.book-a-table .reservation-form-bg {
+.book-a-table .addItems-form-bg {
   background: color-mix(in srgb, var(--default-color), transparent 97%);
 }
 
@@ -1621,15 +1621,12 @@ section,
 
 
 /*--------------------------------------------------------------
-# Starter Section Section
+# Starter Adding your style here
 --------------------------------------------------------------*/
 
 /*------------------------Form style----------------------------*/
-   /* Initially hide the form */
-
   /* Initially hide the form */
   #add {
-    /* position: absolute; */
     display: none;
     width: 100%;
     background: white;
@@ -1661,34 +1658,3 @@ section,
     display: block;
   }
 
-
-
-
-
-
-
-  /* Style for the container to make it cover the entire page */
-  .container {
-    position: relative;
-  }
-
-#add{
-  width: 100%;
-  background-color: white;
-  z-index: 1000; /* Ensures it is on top */
-  }
-
-  /* Background overlay effect to darken the screen when the form shows */
-  #add.active {
-    display: block;
-  }
-
-  /* Optional: Add a close button style */
-/* .closeBtn {
-    position: absolute;
-    top: 5px;
-    right: 25px;
-    cursor: pointer;
-    font-size: 40px;
-    color: black;
-  } */
