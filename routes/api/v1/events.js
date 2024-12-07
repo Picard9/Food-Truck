@@ -13,14 +13,14 @@ const getEvents = async () => {
 
 // API Routes 
 
-router.get('/', async (request, response) => {
+router.get('/events', async (request, response) => {
     const events = await getEvents()
     const foundEvents = await events.find().toArray()
     if (foundEvents) response.send(foundEvents)
     else response.send({ error: { message: `Could not find events` }})
 })
 
-router.get('/:id', async (request, response) => {
+router.get('/events/:id', async (request, response) => {
     const id = request.params
 
     const events = await getEvents()
@@ -29,7 +29,7 @@ router.get('/:id', async (request, response) => {
     else response.send({ error: { message: `Could not find event with id: ${id}` }})
 })
 
-router.post('/', async (request, response) => {
+router.post('/events', async (request, response) => {
     const { name, location, date, time } = request.body
 
     const events = await getEvents()
