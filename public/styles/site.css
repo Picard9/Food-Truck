@@ -256,7 +256,7 @@ h6 {
   text-decoration: underline;
 }
 
-.header .topbar .cta-btn {
+.header .topbar .formSection {
   color: var(--contrast-color);
   background: var(--accent-color);
   font-weight: 500;
@@ -268,7 +268,7 @@ h6 {
   transition: 0.3s;
 }
 
-.header .topbar .cta-btn:hover {
+.header .topbar .formSection:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
