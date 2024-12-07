@@ -1,10 +1,13 @@
 ### Variables
+@url1 = http://localhost:3000/  
 @url = http://localhost:3000/api/v1
 
+
 @testEventId = 6752098a0c9a8144d7339ab9
+@testMenuId = 6753c7850c9a8144d7343991
+
 
 // -------------------------------------------------------- //
-
 
 // Event Routes
 
@@ -25,8 +28,27 @@ Content-Type: application/json
     "time": "3:00 P.M."
 }
 
-
-
 // -------------------------------------------------------- //
 
 // Menu Routes
+
+### Webpage Endpoint.
+GET {{url1}}
+
+### Get ALL Menus
+GET {{url}}/menu
+
+### Get menu by ID
+GET {{url}}/events/{{testMenuId}}
+
+### Add a Menu
+POST {{url}}/menu
+Content-Type: application/json
+{
+    "name": "Poulet DG",
+    "description": "Poulet DG (Directeur Général) is a popular Cameroonian dish made with chicken, often served during special occasions or as a hearty family meal. 
+    The dish features tender chicken cooked with a rich blend of vegetables, including plantains, carrots, and bell peppers, in a flavorful tomato-based sauce. 
+    The combination of savory spices and the sweetness of plantains makes Poulet DG a beloved, comforting dish in Cameroonian cuisine.",
+    "price": "$8.99",
+    "image": "https://i.pinimg.com/originals/32/b0/a3/32b0a3c6ade3b4740eddb24571fa6ffc.jpg"
+}

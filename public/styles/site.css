@@ -20,7 +20,7 @@
 :root {
   --nav-color: #ffffff;  /* The default color of the main navmenu links */
   --nav-hover-color: #ffb03b; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+  --nav-mobile-background-color: #573131; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #ffb03b; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
@@ -939,41 +939,6 @@ section,
 }
 
 /*--------------------------------------------------------------
-# About Section
---------------------------------------------------------------*/
-.about .content h3 {
-  font-size: 1.75rem;
-  font-weight: 700;
-}
-
-.about .content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.about .content ul li {
-  padding: 10px 0 0 0;
-  display: flex;
-}
-
-.about .content ul i {
-  color: var(--accent-color);
-  margin-right: 0.5rem;
-  line-height: 1.2;
-  font-size: 1.25rem;
-}
-
-.about .content p:last-child {
-  margin-bottom: 0;
-}
-
-.about .pulsating-play-btn {
-  position: absolute;
-  left: calc(50% - 47px);
-  top: calc(50% - 47px);
-}
-
-/*--------------------------------------------------------------
 # Why Us Section
 --------------------------------------------------------------*/
 .why-us .card-item {
@@ -1107,12 +1072,13 @@ section,
   font-weight: 600;
 }
 
-.menu .menu-ingredients {
+.menu .menu-description {
   margin-left: 95px;
   font-style: italic;
   font-size: 14px;
   font-family: var(--nav-font);
   color: color-mix(in srgb, var(--default-color), transparent 50%);
+  word-wrap: break-word;
 }
 
 /*--------------------------------------------------------------
@@ -1652,9 +1618,77 @@ section,
   background: color-mix(in srgb, var(--accent-color) 90%, black 15%);
 }
 
+
+
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
+
+/*------------------------Form style----------------------------*/
+   /* Initially hide the form */
+
+  /* Initially hide the form */
+  #add {
+    /* position: absolute; */
+    display: none;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    z-index: 1000; /* Ensures it is on top */
+
+  }
+
+  .closeBtn {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    font-size: 40px;
+    cursor: pointer;
+    color: #333;
+  }
+
+  .closeBtn:hover {
+    color: red;
+  }
+
+  #add.active {
+    display: block;
+  }
+
+
+
+
+
+
+
+  /* Style for the container to make it cover the entire page */
+  .container {
+    position: relative;
+  }
+
+#add{
+  width: 100%;
+  background-color: white;
+  z-index: 1000; /* Ensures it is on top */
+  }
+
+  /* Background overlay effect to darken the screen when the form shows */
+  #add.active {
+    display: block;
+  }
+
+  /* Optional: Add a close button style */
+/* .closeBtn {
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    cursor: pointer;
+    font-size: 40px;
+    color: black;
+  } */

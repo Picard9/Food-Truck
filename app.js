@@ -11,7 +11,8 @@ app.use(express.static('public'))
 
 // Attatch Endpoints
 
-//app.use('/api/v1/menu', require('./routes/api/v1/menu'))  Un-comment this when you add your menu.js page to the routes/api/v1 folder 
+// app.use('/', require('./routes/static'))  //--Home page
+app.use('/api/v1/menu', require('./routes/api/v1/menu'))
 app.use('/api/v1/events', require('./routes/api/v1/events'))
 app.use(require('./routes/static'))
 

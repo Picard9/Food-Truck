@@ -11,7 +11,7 @@ const getEvents = async () => {
     return collection
 }
 
-// API Routes
+// API Routes 
 
 router.get('/', async (request, response) => {
     const events = await getEvents()

@@ -1,11 +1,3 @@
-/**
-* Template Name: Delicious
-* Template URL: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 (function() {
     "use strict";
   
@@ -215,3 +207,85 @@
     document.addEventListener('scroll', navmenuScrollspy);
   
   })();
+
+
+
+/**
+* THIS IS FOR THE MENU ITEMS
+*/
+
+//--  Menu list
+const menuList = document.querySelector(".menu-items")
+
+const getMenuItems = async () => {
+	const response = await fetch('/api/v1/menu')
+	return await response.json()
+}
+
+const displayMenuItems = menus => {
+  menus?.forEach(({ id, name, description, price, image }) => {
+    // Create the main container for each menu item
+    const menuItems = document.createElement("div");
+    menuItems.className = "col-lg-6 menu-item isotope-item filter-specialty"; 
+
+    // Add the image directly to the menuItems container
+    const menuImage = document.createElement("img");
+    menuImage.src = image;
+    menuImage.className = 'menu-img';
+    menuImage.alt = name;
+    menuItems.appendChild(menuImage); // Append the image to menuItems
+    
+    // Create the menu content container
+    const menuContent = document.createElement("div");
+    menuContent.className = "menu-content";
+    menuContent.innerHTML = `
+      <a href="#">${name}</a><span>${price}</span>
+    `;
+    menuItems.appendChild(menuContent); // Append the content
+
+    // Create the menu description container
+    const menuDescription = document.createElement("div");
+    menuDescription.className = "menu-description";
+    menuDescription.innerHTML = `${description}`;
+    menuItems.appendChild(menuDescription); // Append the menu description
+
+
+    menuList.appendChild(menuItems); // Append the entire menu item
+  });
+};
+
+;(async () => {
+	const menus = await getMenuItems()
+	displayMenuItems(menus)
+})()
+
+
+
+//--  Show the Add a Menu Form
+
+// toggle the visibility of the admin form
+const adminLink = document.getElementById('admin');
+const addForm = document.getElementById('add');
+const closeBtn = document.querySelector('.closeBtn');
+
+// Show the form when the admin link is clicked
+adminLink.addEventListener('click', function(e) {
+  e.preventDefault();
+  addForm.classList.add('active'); // Show the form
+});
+
+
+// Close the form when the close button is clicked
+closeBtn.addEventListener('click', function() {
+  addForm.classList.remove('active'); // Hide the form
+});
+
+
+//--  Add a Menu to the list
+
+
+
+
+/**
+* THIS IS FOR THE EVENTS
+*/
