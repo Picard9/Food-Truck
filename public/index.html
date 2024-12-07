@@ -89,7 +89,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <div>
               <a href="#menu" class="btn-get-started">Our Menu</a>
-              <a href="#book-a-table" class="btn-get-started">Book a table</a>
+              <a href="#add-a-menu" class="btn-get-started">Book a table</a>
             </div>
           </div>
         </div><!-- End Carousel Item -->
@@ -101,7 +101,7 @@
             <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.</p>
             <div>
               <a href="#menu" class="btn-get-started">Our Menu</a>
-              <a href="#book-a-table" class="btn-get-started">Book a table</a>
+              <a href="#add-a-menu" class="btn-get-started">Book a table</a>
             </div>
           </div>
         </div><!-- End Carousel Item -->
@@ -113,7 +113,7 @@
             <p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem accusantium.</p>
             <div>
               <a href="#menu" class="btn-get-started">Our Menu</a>
-              <a href="#book-a-table" class="btn-get-started">Book a table</a>
+              <a href="#add-a-menu" class="btn-get-started">Book a table</a>
             </div>
           </div>
         </div><!-- End Carousel Item -->
@@ -387,7 +387,7 @@
 
     <!-- Add a Menu and an Event Section -->
 
-    <section id="book-a-table" class="book-a-table section">
+    <section id="add-a-menu" class="add-a-menu section">
 
       <!-- Add Form -->
       <div class="container" id="add">
@@ -403,12 +403,15 @@
 
           <div class="col-lg-4 addItems-img" style="background-image: url(./img/reservation.jpg);"></div>
 
+
           <div class="col-lg-8 d-flex align-items-center addItems-form-bg" data-aos="fade-up" data-aos-delay="200">
             
-            <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form">
+            <form action="forms/add-a-menu.php" method="post" role="form" class="menu-form">
               <h2>Menu</h2>
-              <div class="row gy-4">
-                <div class="col-lg-4 col-md-6">
+
+              <div class="row gy-4" id="row">
+
+                <div class="col-lg-4 col-md-6 ">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Name of the menu" required="">
                 </div>
                 <div class="col-lg-4 col-md-6">
