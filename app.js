@@ -11,7 +11,6 @@ app.use(express.static('public'))
 
 // Attatch Endpoints
 
-// app.use('/', require('./routes/static'))  //--Home page
 app.use('/api/v1/menu', require('./routes/api/v1/menu'))
 app.use('/api/v1/events', require('./routes/api/v1/events'))
 app.use(require('./routes/static'))
