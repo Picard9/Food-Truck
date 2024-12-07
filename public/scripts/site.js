@@ -261,7 +261,7 @@ const displayMenuItems = menus => {
 
 
 
-//--  Show the Add a Menu Form
+//--  Display Menu Form
 
 // toggle the visibility of the admin form
 const adminLink = document.getElementById('admin');
@@ -283,7 +283,6 @@ closeBtn.addEventListener('click', function() {
 
 //--  Add a Menu to the list
 
-// Get the form element
 const addMenuForm = document.querySelector('#addMenuForm');
 
 // Function to handle form submission
@@ -320,8 +319,8 @@ const handleAddMenuForm = async (event) => {
       const newMenu = await response.json();
       console.log('Menu item added successfully:', newMenu);
 
-      // Optionally, you can display the newly added menu item on the page
-      displayMenuItems([newMenu]); // You may need to adjust this part depending on the response structure
+      // Display the newly added menu item on the page
+      displayMenuItems([newMenu]); 
     } else {
       const error = await response.json();
       console.error('Error adding menu item:', error);
