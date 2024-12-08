@@ -39,7 +39,7 @@ GET {{url1}}
 GET {{url}}/menu
 
 ### Get menu by ID
-GET {{url}}/events/{{testMenuId}}
+GET {{url}}/menu/{{testMenuId}}
 
 ### Add a Menu
 POST {{url}}/menu
