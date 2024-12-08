@@ -41,8 +41,6 @@ GET {{url1}}/admin
 ### Get ALL Menus
 GET {{url}}/menu
 
-
-
 ### Get menu by ID
 GET {{url}}/menu/{{testMenuId}}
 

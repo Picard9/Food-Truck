@@ -771,11 +771,14 @@ url("./fonts/font-icons.woff?dd67030699838ea613ee6dbda90effa6") format("woff");
 .bi-gear::before { content: "\f3e5"; }
 .bi-gem::before { content: "\f3e6"; }
 .bi-geo-alt-fill::before { content: "\f3e7"; }
-.bi-geo-alt::before { content: "\f3e8"; }
+
+ .bi-geo-alt::before { content: "\f3e8"; } /* Adress icon*/
+ 
 .bi-geo-fill::before { content: "\f3e9"; }
 .bi-geo::before { content: "\f3ea"; }
 .bi-gift-fill::before { content: "\f3eb"; }
 .bi-gift::before { content: "\f3ec"; }
+
 .bi-github::before { content: "\f3ed"; }
 .bi-globe::before { content: "\f3ee"; }
 .bi-globe2::before { content: "\f3ef"; }
@@ -783,6 +786,7 @@ url("./fonts/font-icons.woff?dd67030699838ea613ee6dbda90effa6") format("woff");
 .bi-graph-down::before { content: "\f3f1"; }
 .bi-graph-up::before { content: "\f3f2"; }
 .bi-grid-1x2-fill::before { content: "\f3f3"; }
+
 .bi-grid-1x2::before { content: "\f3f4"; }
 .bi-grid-3x2-gap-fill::before { content: "\f3f5"; }
 .bi-grid-3x2-gap::before { content: "\f3f6"; }
@@ -835,8 +839,8 @@ url("./fonts/font-icons.woff?dd67030699838ea613ee6dbda90effa6") format("woff");
 .bi-house::before { content: "\f425"; }
 .bi-hr::before { content: "\f426"; }
 .bi-hurricane::before { content: "\f427"; }
-.bi-image-alt::before { content: "\f428"; }
-.bi-image-fill::before { content: "\f429"; }
+.bi-image-alt::before { content: "\f428"; } 
+.bi-image-fill::before { content: "\f429"; }/************* */
 .bi-image::before { content: "\f42a"; }
 .bi-images::before { content: "\f42b"; }
 .bi-inbox-fill::before { content: "\f42c"; }
@@ -1244,7 +1248,8 @@ url("./fonts/font-icons.woff?dd67030699838ea613ee6dbda90effa6") format("woff");
 .bi-telephone-plus::before { content: "\f5be"; }
 .bi-telephone-x-fill::before { content: "\f5bf"; }
 .bi-telephone-x::before { content: "\f5c0"; }
-.bi-telephone::before { content: "\f5c1"; }
+
+.bi-telephone::before { content: "\f5c1"; } /*Phone icone for Contact*/
 .bi-terminal-fill::before { content: "\f5c2"; }
 .bi-terminal::before { content: "\f5c3"; }
 .bi-text-center::before { content: "\f5c4"; }
