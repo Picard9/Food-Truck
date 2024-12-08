@@ -90,12 +90,14 @@ url("./fonts/font-icons.woff?dd67030699838ea613ee6dbda90effa6") format("woff");
 .bi-arrow-up-left-square-fill::before { content: "\f13d"; }
 .bi-arrow-up-left-square::before { content: "\f13e"; }
 .bi-arrow-up-left::before { content: "\f13f"; }
-.bi-arrow-up-right-circle-fill::before { content: "\f140"; }
-.bi-arrow-up-right-circle::before { content: "\f141"; }
-.bi-arrow-up-right-square-fill::before { content: "\f142"; }
-.bi-arrow-up-right-square::before { content: "\f143"; }
-.bi-arrow-up-right::before { content: "\f144"; }
-.bi-arrow-up-short::before { content: "\f145"; }
+
+.bi-arrow-up-right-circle-fill::before { content: "\f140"; } 
+ .bi-arrow-up-right-circle::before { content: "\f141"; } 
+ .bi-arrow-up-right-square-fill::before { content: "\f142"; } 
+ .bi-arrow-up-right-square::before { content: "\f143"; } 
+ .bi-arrow-up-right::before { content: "\f144"; }
+ .bi-arrow-up-short::before { content: "\f145"; } /*Scrolle bar*/
+ 
 .bi-arrow-up-square-fill::before { content: "\f146"; }
 .bi-arrow-up-square::before { content: "\f147"; }
 .bi-arrow-up::before { content: "\f148"; }

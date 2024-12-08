@@ -32,10 +32,10 @@ router.get('/menu/:id', async (request, response) => {
 
 //Add a Menu: post /api/v1/menu
 router.post('/menu', async (request, response) => {
-    const { name, description, price, image} = request.body
+    const {name, description, price, image} = request.body
 
     const menus = await getMenuItems()
-    const inserted = await menus.insertOne({ name, description, price, image })
+    const inserted = await menus.insertOne({name, description, price, image })
     response.send(inserted)
 })
 

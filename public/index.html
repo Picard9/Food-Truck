@@ -32,7 +32,7 @@
 
       <!-- site CSS File -->
       <link href="styles/site.css" rel="stylesheet">
-  
+
       <!-- site JS File -->
       <script src="scripts/site.js" defer></script>
   
@@ -48,14 +48,17 @@
         <div class="contact-info d-flex align-items-center">
           <i class="bi bi-clock ms-4 d-none d-lg-flex align-items-center"><span>Mon-Sat: 11:00 AM - 23:00 PM</span></i>
         </div>
-        <a href="#add"  id="admin" class="formSection">Admin</a>
+        <!-- <a href="admin.html"id="admin" class="formSection">Admin</a> -->
+        <a href="admin.html" id="admin" class="formSection">Admin</a>
+
+
       </div>
     </div><!-- End Top Bar -->
 
     <div class="branding d-flex align-items-cente">
 
       <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="index.html" target="_parent" class="logo d-flex align-items-center">
           <!-- Uncomment the line below if you also wish to use an image logo -->
           <h1 class="sitename">Food-Truck</h1>
         </a>
@@ -81,16 +84,11 @@
     <section id="hero" class="hero section dark-background">
 
       <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-
         <div class="carousel-item active">
           <img src="./img/hero-carousel/hero-carousel-1.jpg" alt="">
           <div class="carousel-container">
             <h2><span>Food</span>Truck</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <div>
-              <a href="#menu" class="btn-get-started">Our Menu</a>
-              <a href="#add-a-menu" class="btn-get-started">Book a table</a>
-            </div>
           </div>
         </div><!-- End Carousel Item -->
 
@@ -99,10 +97,6 @@
           <div class="carousel-container">
             <h2>At vero eos et accusamus</h2>
             <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.</p>
-            <div>
-              <a href="#menu" class="btn-get-started">Our Menu</a>
-              <a href="#add-a-menu" class="btn-get-started">Book a table</a>
-            </div>
           </div>
         </div><!-- End Carousel Item -->
 
@@ -111,10 +105,6 @@
           <div class="carousel-container">
             <h2>Temporibus autem quibusdam</h2>
             <p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem accusantium.</p>
-            <div>
-              <a href="#menu" class="btn-get-started">Our Menu</a>
-              <a href="#add-a-menu" class="btn-get-started">Book a table</a>
-            </div>
           </div>
         </div><!-- End Carousel Item -->
 
@@ -132,6 +122,8 @@
 
     </section><!-- home Section -->
 
+    <!-- Add a Menu and an Event Section -->
+
     <!-- Menu Section -->
     <section id="menu" class="menu section">
 
@@ -143,16 +135,6 @@
 
       <div class="container isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul class="menu-filters isotope-filters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-starters">Starters</li>
-              <li data-filter=".filter-salads">Salads</li>
-              <li data-filter=".filter-specialty">Specialty</li>
-            </ul>
-          </div>
-        </div><!-- Menu Filters -->
       
         <!-- List of Menu  -->
         <div class="row isotope-container menu-items" data-aos="fade-up" data-aos-delay="200">
@@ -341,60 +323,12 @@
 
     </section><!-- /Events Section -->
 
-    <!-- Add a Menu and an Event Section -->
-
+<!-- /this is just to create a space between the Events section and the Footer -->
     <section id="add-a-menu" class="add-a-menu section">
 
-      <!-- Add Form -->
-      <div class="container" id="add">
+      <!-- DON'T DELETE -->
 
-        <span class="closeBtn">&times;</span>
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Food-Truck</h2>
-          <div><span>Add a Menu</span> <span class="description-title">/Add an Event</span></div>
-        </div><!-- End Section Title -->
-
-        <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-4 addItems-img" style="background-image: url(./img/reservation.jpg);"></div>
-
-
-          <div class="col-lg-8 d-flex align-items-center addItems-form-bg" data-aos="fade-up" data-aos-delay="200">
-            
-            <form action="forms/add-a-menu.php" method="post" role="form" class="menu-form">
-              <h2>New Menu</h2>
-
-              <div class="row gy-4" id="row">
-
-                <div class="col-lg-4 col-md-6 ">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Name of the menu" required="">
-                </div>
-                <div class="col-lg-4 col-md-6">
-                  <input type="number" class="form-control" name="number" id="text" placeholder="price" required="">
-                </div>
-                <div class="col-lg-4 col-md-6">
-                  <input type="text" class="form-control" name="text" id="text" placeholder="Image URL" required="">
-                </div>
-                <div class="form-group mt-3">
-                  <textarea class="form-control" name="description" rows="5" placeholder="Description"></textarea>
-                </div>
-              </div>
-
-              <div class="text-center mt-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your menu request was sent.</div>
-                <button type="submit"  id="addMenuForm">Add Menu</button>
-              </div>
-            </form>
-          </div><!-- End Reservation Form -->
-
-        </div>
-
-      </div><!-- Add Form -->
-
-    </section><!-- /Add a Menu and an Event Section -->
+    </section><!-- /this is just to create a space between the Events section and the Footer -->
 
   </main>
 

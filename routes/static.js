@@ -1,4 +1,3 @@
-
 const path = require('path')
 const router = require('express').Router()
 
@@ -14,7 +13,7 @@ router.get('/event/:eventId', (request, response) => {
 })
 
 router.get('/admin', (request, response) => {
-    response.sendFile('index.html', { root })
+    response.sendFile('admin.html', { root })
 
 })
 
