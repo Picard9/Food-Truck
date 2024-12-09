@@ -2,12 +2,14 @@
 
 const FormSubmission = (formId, endpoint) => {
 
-    const addMenuForm = document.getElementById(formId)
+    const addMenuEventForm = document.getElementById(formId)
     
-    addMenuForm.addEventListener('submit', function(e) {
+    addMenuEventForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData.entries());
+    
+    // Collect form data and Convert data
+    const formData = new FormData(this); 
+    const data = Object.fromEntries(formData.entries()); 
 
     fetch(`/api/v1/${endpoint}`, {
         method: 'POST',
@@ -23,7 +25,9 @@ const FormSubmission = (formId, endpoint) => {
     });
 };
 
-FormSubmission('menuForm', 'menu'); //invoke the function and pass the id from the end points.
+FormSubmission('menuForm', 'menu'); //invoke the function and pass the id's from and the end point (menu).
+FormSubmission('eventForm', 'events'); //invoke the function and pass the id's from and the end point (events).
+
 
 
   

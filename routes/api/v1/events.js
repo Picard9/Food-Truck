@@ -37,4 +37,5 @@ router.post('/events', async (request, response) => {
     response.send(inserted)
 })
 
+
 module.exports = router
