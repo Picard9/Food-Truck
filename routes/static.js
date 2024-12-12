@@ -7,8 +7,8 @@ router.get('/', (request, response) => {
     response.sendFile('index.html', { root })
 })
 
-router.get('/event/:eventId', (request, response) => {
-    response.sendFile('event.html', { root })
+router.get('/event/:id', (request, response) => {
+    response.sendFile('NewPageEvents.html', { root })
 
 })
 

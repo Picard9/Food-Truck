@@ -9,7 +9,7 @@
 
 
     const { pathname } = window.location
-    const [, events, id] = pathname.split('/')
+    const [, event, id] = pathname.split('/')
 
     const url = `/api/v1/events/${id}`
 
@@ -18,7 +18,7 @@
     const { name, location, date, time } = await result.json()
 
     nameEl.textContent = name
-    locationEl.textContent = `Location: ${location}`
+    locationEl.textContent = location
     dateEl.textContent = date
     timeEl.textContent = time
 

@@ -261,5 +261,72 @@ const displayMenuItems = menus => {
 
 
 /**
-* THIS IS FOR DYNAMICALY PULL THE EVENT ITEMS
+* THIS IS FOR DYNAMICALLY PULLING THE EVENT ITEMS
 */
+
+const container = document.querySelector('#events .container');
+
+
+// Get event info
+const getEvents = async () => {
+	const response = await fetch('/api/v1/events')
+	return await response.json()
+}
+
+const displayEvents = events => {
+  events?.forEach(({ _id, name, date }) => {
+    
+    // Create the outer row div with classes
+    const rowDiv = document.createElement('div');
+    rowDiv.className = 'row gy-4 event-item';
+
+    // Create the column div for content with classes
+    const colDiv = document.createElement('div');
+    colDiv.className = 'col-lg-6 pt-4 pt-lg-0 content';
+
+    // Create the event name (h3)
+    const eventName = document.createElement('h3');
+    eventName.textContent = name
+
+    // Create the price div (for date)
+    const eventDateDiv = document.createElement('div');
+    eventDateDiv.className = 'price';
+    const eventDateText = document.createElement('p');
+    const eventDateSpan = document.createElement('span');
+    eventDateSpan.textContent = date;
+    eventDateText.appendChild(eventDateSpan);
+    eventDateDiv.appendChild(eventDateText);
+
+    // Create the "See More Info" link
+    const moreInfoDiv = document.createElement('div');
+    moreInfoDiv.className = 'price';
+    const moreInfoLink = document.createElement('a');
+    moreInfoLink.href = `http://localhost:3000/event/${_id}`;
+    moreInfoLink.target = '_blank';
+    const moreInfoText = document.createElement('p');
+    const moreInfoSpan = document.createElement('span');
+    moreInfoSpan.textContent = 'See More Info';
+    moreInfoText.appendChild(moreInfoSpan);
+    moreInfoLink.appendChild(moreInfoText);
+    moreInfoDiv.appendChild(moreInfoLink);
+
+    // Append the event name, date, and link to the column
+    colDiv.appendChild(eventName);
+    colDiv.appendChild(eventDateDiv);
+    colDiv.appendChild(moreInfoDiv);
+
+    // Append the column to the row
+    rowDiv.appendChild(colDiv);
+
+    // Append the row to the container
+    container.appendChild(rowDiv);
+  })
+}
+
+;(async () => {
+	const events = await getEvents()
+	displayEvents(events)
+})()
+
+  
+
