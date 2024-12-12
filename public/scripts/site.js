@@ -301,7 +301,7 @@ const displayEvents = events => {
     const moreInfoDiv = document.createElement('div');
     moreInfoDiv.className = 'price';
     const moreInfoLink = document.createElement('a');
-    moreInfoLink.href = `http://localhost:3000/event/${_id}`;
+    moreInfoLink.href = `/event/${_id}`;
     moreInfoLink.target = '_blank';
     const moreInfoText = document.createElement('p');
     const moreInfoSpan = document.createElement('span');
