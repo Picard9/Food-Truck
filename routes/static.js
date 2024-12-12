@@ -8,7 +8,7 @@ router.get('/', (request, response) => {
 })
 
 router.get('/event/:eventId', (request, response) => {
-    response.sendFile('index.html', { root })
+    response.sendFile('event.html', { root })
 
 })
 

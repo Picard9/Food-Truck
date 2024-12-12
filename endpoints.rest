@@ -11,6 +11,10 @@
 
 // Event Routes
 
+### Event Webpage
+GET {{url1}}/event/{{testEventId}}
+
+
 ### Get ALL Events
 GET {{url}}/events
 

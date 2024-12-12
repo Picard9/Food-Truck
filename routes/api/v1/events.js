@@ -21,7 +21,7 @@ router.get('/events', async (request, response) => {
 })
 
 router.get('/events/:id', async (request, response) => {
-    const id = request.params
+    const { id } = request.params
 
     const events = await getEvents()
     const foundEvents = await events.findOne({_id: new ObjectId(id)})
