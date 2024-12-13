@@ -1,5 +1,5 @@
 (function() {
-    "use strict";
+    // "use strict";
   
     /**
      * Apply .scrolled class to the body as the page is scrolled down
@@ -295,7 +295,6 @@ const generateEvents= async () => {
     SliderContentZOne.classList.add('row', 'gy-4', 'event-item');
 
 
-<<<<<<< HEAD
     // Create the second column with event details
     const colContent = document.createElement('div');
     colContent.classList.add('col-lg-6', 'pt-4', 'pt-lg-0', 'content');
@@ -320,15 +319,6 @@ const generateEvents= async () => {
     // link.target = '_blank';  // I WOULD LET THIS COMMENTED/ BUT YOUR CHOICE IF YOU PREFER IT UNCOMMENTED
 
     const moreInfoP = document.createElement('p');
-=======
-    // Create the "See More Info" link
-    const moreInfoDiv = document.createElement('div');
-    moreInfoDiv.className = 'price';
-    const moreInfoLink = document.createElement('a');
-    moreInfoLink.href = `/event/${_id}`;
-    moreInfoLink.target = '_blank';
-    const moreInfoText = document.createElement('p');
->>>>>>> ed181e44251be09b58a6f84daa891b6b46775db0
     const moreInfoSpan = document.createElement('span');
     moreInfoSpan.textContent = 'See More Info';
     moreInfoP.appendChild(moreInfoSpan);
