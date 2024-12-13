@@ -49,7 +49,7 @@ GET {{url}}/menu
 GET {{url}}/menu/{{testMenuId}}
 
 ### Add a Menu
-POST {{url}}/menu
+POST {{url}}/menu`
 Content-Type: application/json
 
 {

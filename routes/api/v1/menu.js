@@ -1,8 +1,12 @@
+//Imports and Setup
+
 const router = require('express').Router()
 
 const { response } = require('express')
 
 const { getCollection, ObjectId } = require('../../../dbconnect')
+
+//Getting the Menu Items Collection
 
 let collection = null
 const getMenuItems = async () => {
@@ -39,4 +43,4 @@ router.post('/menu', async (request, response) => {
     response.send(inserted)
 })
 
-module.exports = router
+module.exports = router //Module Export

@@ -209,6 +209,7 @@
   })();
 
 
+//--------- We've started our codes from here---------------//
 
 /**
 * THIS IS FOR DYNAMICALY PULL THE MENU ITEMS
@@ -217,13 +218,17 @@
 //--  Menu list
 const menuList = document.querySelector(".menu-items")
 
+//Fetching Menu Items
 const getMenuItems = async () => {
 	const response = await fetch('/api/v1/menu')
 	return await response.json()
 }
 
+
+//Creating Elements and Displaying the Menu Items
+
 const displayMenuItems = menus => {
-  menus?.forEach(({ _id, name, description, price, image }) => {
+  menus.forEach(({ _id, name, description, price, image }) => {
     // Create the main container for each menu item
     const menuItems = document.createElement("div");
     menuItems.className = "col-lg-6 menu-item isotope-item filter-specialty"; 
@@ -254,11 +259,11 @@ const displayMenuItems = menus => {
   });
 };
 
+//Loading and Displaying Data
 ;(async () => {
 	const menus = await getMenuItems()
 	displayMenuItems(menus)
 })()
-
 
 
 /**

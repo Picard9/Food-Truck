@@ -842,6 +842,7 @@
     background: color-mix(in srgb, var(--default-color), transparent 97%);
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
   }
   
   .add-a-menu .menu-form {
