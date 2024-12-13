@@ -223,7 +223,7 @@ const getMenuItems = async () => {
 }
 
 const displayMenuItems = menus => {
-  menus?.forEach(({ id, name, description, price, image }) => {
+  menus?.forEach(({ _id, name, description, price, image }) => {
     // Create the main container for each menu item
     const menuItems = document.createElement("div");
     menuItems.className = "col-lg-6 menu-item isotope-item filter-specialty"; 
@@ -260,73 +260,88 @@ const displayMenuItems = menus => {
 })()
 
 
+
 /**
 * THIS IS FOR DYNAMICALLY PULLING THE EVENT ITEMS
 */
 
-const container = document.querySelector('#events .container');
-
-
-// Get event info
+//Get All the Events
 const getEvents = async () => {
 	const response = await fetch('/api/v1/events')
 	return await response.json()
 }
 
-const displayEvents = events => {
-  events?.forEach(({ _id, name, date }) => {
+
+// Function to generate event slides dynamically
+const generateEvents= async () => {
+  const events = await getEvents();  // Fetch the event data
+  const swiperContainer = document.querySelector('.swiper-wrapper'); 
+
+  // Clear the container before adding slides
+  swiperContainer.innerHTML = '';
+
+  events.forEach(event => {
+
+    // Destructure the event data
+    const { _id, name, date } = event; 
     
-    // Create the outer row div with classes
-    const rowDiv = document.createElement('div');
-    rowDiv.className = 'row gy-4 event-item';
 
-    // Create the column div for content with classes
-    const colDiv = document.createElement('div');
-    colDiv.className = 'col-lg-6 pt-4 pt-lg-0 content';
+    // Create the outer div for the swiper slide
+    const swiperSlide = document.createElement('div');
+    swiperSlide.classList.add('swiper-slide');
 
-    // Create the event name (h3)
-    const eventName = document.createElement('h3');
-    eventName.textContent = name
+    // Create the row with event item content
+    const SliderContentZOne = document.createElement('div');
+    SliderContentZOne.classList.add('row', 'gy-4', 'event-item');
 
-    // Create the price div (for date)
-    const eventDateDiv = document.createElement('div');
-    eventDateDiv.className = 'price';
-    const eventDateText = document.createElement('p');
-    const eventDateSpan = document.createElement('span');
-    eventDateSpan.textContent = date;
-    eventDateText.appendChild(eventDateSpan);
-    eventDateDiv.appendChild(eventDateText);
 
-    // Create the "See More Info" link
-    const moreInfoDiv = document.createElement('div');
-    moreInfoDiv.className = 'price';
-    const moreInfoLink = document.createElement('a');
-    moreInfoLink.href = `http://localhost:3000/event/${_id}`;
-    moreInfoLink.target = '_blank';
-    const moreInfoText = document.createElement('p');
+    // Create the second column with event details
+    const colContent = document.createElement('div');
+    colContent.classList.add('col-lg-6', 'pt-4', 'pt-lg-0', 'content');
+    const h3 = document.createElement('h3');
+    h3.textContent = name 
+    
+    // Create the date paragraph
+    const priceDate = document.createElement('div');
+    priceDate.classList.add('price'); //I kept the same class, so I don't need to modify the CSS
+    const dateP = document.createElement('p');
+    const spanDate = document.createElement('span');
+    spanDate.textContent = date
+    dateP.appendChild(spanDate);
+    priceDate.appendChild(dateP);
+
+    // Create the link for more info
+    const linkToMore = document.createElement('div');
+    linkToMore.classList.add('price');
+    const link = document.createElement('a');
+    link.href = `event.html?id=${_id}`;  //THIS IS WHERE EACH ID IS PASSED / GO ALSO IN rout/api/v1/event file there is an UPDATE
+    
+    // link.target = '_blank';  // I WOULD LET THIS COMMENTED/ BUT YOUR CHOICE IF YOU PREFER IT UNCOMMENTED
+
+    const moreInfoP = document.createElement('p');
     const moreInfoSpan = document.createElement('span');
     moreInfoSpan.textContent = 'See More Info';
-    moreInfoText.appendChild(moreInfoSpan);
-    moreInfoLink.appendChild(moreInfoText);
-    moreInfoDiv.appendChild(moreInfoLink);
+    moreInfoP.appendChild(moreInfoSpan);
+    link.appendChild(moreInfoP);
+    linkToMore.appendChild(link);
 
-    // Append the event name, date, and link to the column
-    colDiv.appendChild(eventName);
-    colDiv.appendChild(eventDateDiv);
-    colDiv.appendChild(moreInfoDiv);
+    // Append everything to the content column
+    colContent.appendChild(h3);
+    colContent.appendChild(priceDate);
+    colContent.appendChild(linkToMore);
 
-    // Append the column to the row
-    rowDiv.appendChild(colDiv);
+    // Append the columns to the SliderContentZOne
+    SliderContentZOne.appendChild(colContent);
 
-    // Append the row to the container
-    container.appendChild(rowDiv);
-  })
-}
+    // Append the row to the swiper slide
+    swiperSlide.appendChild(SliderContentZOne);
 
-;(async () => {
-	const events = await getEvents()
-	displayEvents(events)
-})()
+    // Append the swiper slide to the swiper container
+    swiperContainer.appendChild(swiperSlide);
+  });
+};
 
-  
+// Call the function to generate event slides
+generateEvents();
+
 
